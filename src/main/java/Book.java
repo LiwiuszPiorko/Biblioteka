@@ -1,4 +1,5 @@
 public class Book {
+    private int id;
     private String tytul;
     private String autor;
     private int rok;

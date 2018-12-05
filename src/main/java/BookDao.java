@@ -8,7 +8,7 @@ public class BookDao {
     private static final String PASS = "admin";
     private Connection connection;
 
-    public BookDao() {
+    public BookDao()throws SQLException {
         try {
             connection = DriverManager.getConnection(URL, USER, PASS);
         } catch (SQLException e) {
@@ -23,12 +23,12 @@ public class BookDao {
         }
     }
     public void saveBook(Book book) throws SQLException {
-        final String bookU = "insert into książki(tytuł, autor, rok,isbn ) values(?, ?, ?, ?)";
+        final String bookU = "insert into książki(tytuł, autor, rok,isbn) values(?, ?, ?, ?)";
         PreparedStatement statement = connection.prepareStatement(bookU);
         statement.setString(1, book.getTytul());
         statement.setString(2, book.getAutor());
-        statement.setDouble(3, book.getRok());
-        statement.setDouble(3, book.getIsbn());
+        statement.setInt(3, book.getRok());
+        statement.setInt(4, book.getIsbn());
         statement.executeUpdate();
     }
     public Book read(int id) throws SQLException {

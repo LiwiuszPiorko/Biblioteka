@@ -25,7 +25,7 @@ public class Library {
         System.out.println("Podaj autora by wyszukać pozycję: ");
         String lastName = scannerNext.nextLine();
         try {
-          BookDao dao = new BookDao();
+            BookDao dao = new BookDao();
             List<Book> booksByAuthorsName = dao.allByAuthorsName(lastName);
             System.out.println(booksByAuthorsName);
         } catch (SQLException e) {
