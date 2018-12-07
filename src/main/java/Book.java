@@ -1,6 +1,6 @@
 public class Book {
     private int id;
-    private String tytul;
+    private String tytuł;
     private String autor;
     private int rok;
     private int isbn;
@@ -8,19 +8,19 @@ public class Book {
     public Book() {
     }
 
-    public Book(String tytul, String autor, int rok, int isbn) {
-        this.tytul = tytul;
+    public Book(String tytuł, String autor, int rok, int isbn) {
+        this.tytuł = tytuł;
         this.autor = autor;
         this.rok = rok;
         this.isbn = isbn;
     }
 
-    public String getTytul() {
-        return tytul;
+    public String getTytuł() {
+        return tytuł;
     }
 
-    public void setTytul(String tytul) {
-        this.tytul = tytul;
+    public void setTytuł(String tytuł) {
+        this.tytuł = tytuł;
     }
 
     public String getAutor() {
@@ -45,5 +45,16 @@ public class Book {
 
     public void setIsbn(int isbn) {
         this.isbn = isbn;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", tytuł='" + tytuł + '\'' +
+                ", autor='" + autor + '\'' +
+                ", rok=" + rok +
+                ", isbn=" + isbn +
+                '}';
     }
 }
